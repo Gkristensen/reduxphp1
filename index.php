@@ -1,5 +1,5 @@
 <?php require_once("db_const.php");  
-$connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME); 
+$connection = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME); 
 $connection->set_charset("utf8");  ?> 
 <!doctype html> 
 <html> 
@@ -21,7 +21,7 @@ $connection->set_charset("utf8");  ?>
 		 ?>	
 </header>
          <?php 
-		 $jokedata = $connection->query("SELECT * FROM joke ORDER BY id DESC"); 
+		 $jokedata = $connection->query("SELECT * FROM jokes ORDER BY id DESC"); 
 		 $joke = $jokedata->fetch_assoc();
 		 ###############################################################################################
 		 # Oh my god - I need a way to render ALL records from the database, not only the last one :-( #
