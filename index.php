@@ -22,7 +22,7 @@ $connection->set_charset("utf8");  ?>
 </header>
          <?php 
 		 $jokedata = $connection->query("SELECT * FROM joke ORDER BY id DESC"); 
-		 $joke = $data->fetch_assoc();
+		 $joke = $jokedata->fetch_assoc();
 		 ###############################################################################################
 		 # Oh my god - I need a way to render ALL records from the database, not only the last one :-( #
 		 # This makes me sick...                                                                       # 
@@ -30,7 +30,7 @@ $connection->set_charset("utf8");  ?>
 		 print_r($joke);
 			echo '<!-- single Chuck Norris joke start -->
 			<div class="joke">
-					<img src="' . $joke['img'] . '" class="norris_pic" alt="Chuck Norris caricature"/>
+					<img src="' . $joke['images'] . '" class="norris_pic" alt="Chuck Norris caricature"/>
 					<h2>' . $joke['joke'] .  '</h2>	       
             </div>';
 			echo '<!-- single joke end -->';
